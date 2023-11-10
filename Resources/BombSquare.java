@@ -8,7 +8,7 @@ public class BombSquare extends GameSquare
 
 	private boolean thisSquareHasBomb = false;
 	public static final int MINE_PROBABILITY = 10;
-	
+
 	private boolean clicked = false;
 	private int currentX;
 	private int currentY;
@@ -57,6 +57,27 @@ public class BombSquare extends GameSquare
 					}
 				}
 
+			}
+		}
+	}
+
+	public void expandingSquares(){
+		//loops through the adjacent squares in both x and y directions allowing for diagonals to be detected too
+		for (int x = -1; x <= 1; x++){
+			for (int y = -1; y <= 1; y++){
+				
+				//uses currentX and currentY to move around adjacent squares
+				currentX = xLocation + x;
+				currentY = yLocation + y;
+				
+				//creates gameSquare instance (called square) to get the right location
+				GameSquare square = board.getSquareAt(currentX, currentY); 
+
+				//if no bombs in adjaccent squares
+				if (square instanceof BombSquare && bombCount == 0){
+					//sets the image as "0" to reveal the square allowing for expansion
+					board.getSquareAt(xLocation, yLocation).setImage("Resources/images/0.png");
+					square.clicked(); //goes back to the clicked method
 			}
 		}
 	}

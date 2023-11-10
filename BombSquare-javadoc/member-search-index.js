@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"BombSquare","l":"BombSquare(int, int, GameBoard)","u":"%3Cinit%3E(int,int,GameBoard)"},{"p":"<Unnamed>","c":"BombSquare","l":"clicked()"},{"p":"<Unnamed>","c":"BombSquare","l":"expandingSquares()"},{"p":"<Unnamed>","c":"BombSquare","l":"MINE_PROBABILITY"}];updateSearchResults();

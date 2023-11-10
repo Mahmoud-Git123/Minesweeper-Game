@@ -84,11 +84,13 @@ public class BombSquare extends GameSquare
 					//sets the image as "0" to reveal the square allowing for expansion
 					board.getSquareAt(xLocation, yLocation).setImage("Resources/images/0.png");
 					square.clicked(); //goes back to the clicked method
-
+				} else if (square != null && clicked == false){ //if the square is not clicked/revealed then go back to same method
+					expandingSquares(); //implements recurrsion
+				}
 			}
 		}
 	}
 
 
-	}
+
 }

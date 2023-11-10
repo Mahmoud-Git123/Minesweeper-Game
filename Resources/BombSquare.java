@@ -8,6 +8,7 @@ public class BombSquare extends GameSquare
 
 	private boolean thisSquareHasBomb = false;
 	public static final int MINE_PROBABILITY = 10;
+	private boolean clicked = false;
 	public BombSquare(int x, int y, GameBoard board)
 	{
 		super(x, y, "Resources/images/blank.png", board);
@@ -24,6 +25,7 @@ public class BombSquare extends GameSquare
 		
 			if (thisSquareHasBomb){
 				setImage("Resources/images/bomb.png");
+				clicked = true;
 
 			} 
 	}

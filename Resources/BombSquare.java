@@ -8,9 +8,11 @@ public class BombSquare extends GameSquare
 
 	private boolean thisSquareHasBomb = false;
 	public static final int MINE_PROBABILITY = 10;
+	
 	private boolean clicked = false;
 	private int currentX;
 	private int currentY;
+	private int bombCount;
 
 
 	public BombSquare(int x, int y, GameBoard board)
@@ -41,7 +43,17 @@ public class BombSquare extends GameSquare
 						//uses currentX and currentY to move around adjacent squares
 						currentX = xLocation + x;
 						currentY = yLocation + y;
+
+						//creates gameSquare instance (called square) to get the right location
+ 						GameSquare square = board.getSquareAt(currentX, currentY); 
 						
+						//make square an instancce of BombSquare to allow checking for bombs
+						 if (square instanceof BombSquare && ((BombSquare) square).thisSquareHasBomb) {
+							//once it finds a bomb it will add to bomb counter
+							bombCount++;
+							clicked  = true; //limits any changes from pressing multiple times
+						}
+
 					}
 				}
 

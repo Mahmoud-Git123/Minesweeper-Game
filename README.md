@@ -1,1 +1,2 @@
-# SCC212-BombSweeper
+Minesweeper Game - 
+Author: Mahmoud A.

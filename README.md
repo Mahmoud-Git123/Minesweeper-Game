@@ -1,2 +1,4 @@
-Minesweeper Game - 
-Author: Mahmoud A.
+MineSweeper Game
+- Author: Mahmoud A.
+- Language: Java
+- Focus: OOP Principles and Recursion
